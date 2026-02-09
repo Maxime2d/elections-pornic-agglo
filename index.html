@@ -24,26 +24,27 @@ iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAIAAAABc2X6AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
     const LOGO_IMPRIMVERT = "/images/image2.png";
 
     const communesData = {
-      "La Bernerie-en-Retz": { electeurs: 3241, conseillers: 27, circulaires: 3403, bulletins: 7130, grandesAffiches: 6, petitesAffiches: 6 },
-      "Chaumes-en-Retz": { electeurs: 5732, conseillers: 29, circulaires: 6019, bulletins: 12610, grandesAffiches: 10, petitesAffiches: 10 },
-      "Chauvé": { electeurs: 2287, conseillers: 23, circulaires: 2401, bulletins: 5031, grandesAffiches: 4, petitesAffiches: 4 },
-      "Cheix-en-Retz": { electeurs: 974, conseillers: 15, circulaires: 1023, bulletins: 2143, grandesAffiches: 2, petitesAffiches: 2 },
-      "Les Moutiers-en-Retz": { electeurs: 1806, conseillers: 19, circulaires: 1896, bulletins: 3973, grandesAffiches: 4, petitesAffiches: 4 },
-      "La Plaine-sur-Mer": { electeurs: 4136, conseillers: 27, circulaires: 4343, bulletins: 9099, grandesAffiches: 10, petitesAffiches: 10 },
-      "Port-Saint-Père": { electeurs: 2337, conseillers: 23, circulaires: 2454, bulletins: 5141, grandesAffiches: 6, petitesAffiches: 6 },
-      "Pornic": { electeurs: 16447, conseillers: 35, circulaires: 17269, bulletins: 36183, grandesAffiches: 24, petitesAffiches: 24 },
-      "Préfailles": { electeurs: 1690, conseillers: 19, circulaires: 1775, bulletins: 3718, grandesAffiches: 2, petitesAffiches: 2 },
-      "Rouans": { electeurs: 2509, conseillers: 23, circulaires: 2634, bulletins: 5520, grandesAffiches: 2, petitesAffiches: 2 },
-      "Saint-Hilaire-de-Chaléons": { electeurs: 1831, conseillers: 19, circulaires: 1923, bulletins: 4028, grandesAffiches: 4, petitesAffiches: 4 },
-      "Saint-Michel-Chef-Chef": { electeurs: 2772, conseillers: 23, circulaires: 2911, bulletins: 6098, grandesAffiches: 4, petitesAffiches: 4 },
-      "Sainte-Pazanne": { electeurs: 5573, conseillers: 29, circulaires: 5852, bulletins: 12261, grandesAffiches: 4, petitesAffiches: 4 },
-      "Villeneuve-en-Retz": { electeurs: 4111, conseillers: 27, circulaires: 4317, bulletins: 9044, grandesAffiches: 6, petitesAffiches: 6 },
-      "Vue": { electeurs: 1299, conseillers: 19, circulaires: 1364, bulletins: 2858, grandesAffiches: 2, petitesAffiches: 2 }
+      "La Bernerie-en-Retz": { electeurs: 3241, conseillers: 27, ccCandidats: 3, circulaires: 3403, bulletins: 7130, grandesAffiches: 6, petitesAffiches: 6 },
+      "Chaumes-en-Retz": { electeurs: 5732, conseillers: 33, ccCandidats: 7, circulaires: 6019, bulletins: 12610, grandesAffiches: 10, petitesAffiches: 10 },
+      "Chauvé": { electeurs: 2287, conseillers: 23, ccCandidats: 3, circulaires: 2401, bulletins: 5031, grandesAffiches: 4, petitesAffiches: 4 },
+      "Cheix-en-Retz": { electeurs: 974, conseillers: 15, ccCandidats: 2, circulaires: 1023, bulletins: 2143, grandesAffiches: 2, petitesAffiches: 2 },
+      "Les Moutiers-en-Retz": { electeurs: 1806, conseillers: 19, ccCandidats: 2, circulaires: 1896, bulletins: 3973, grandesAffiches: 4, petitesAffiches: 4 },
+      "La Plaine-sur-Mer": { electeurs: 4136, conseillers: 27, ccCandidats: 4, circulaires: 4343, bulletins: 9099, grandesAffiches: 10, petitesAffiches: 10 },
+      "Port-Saint-Père": { electeurs: 2337, conseillers: 23, ccCandidats: 3, circulaires: 2454, bulletins: 5141, grandesAffiches: 6, petitesAffiches: 6 },
+      "Pornic": { electeurs: 16447, conseillers: 33, ccCandidats: 14, circulaires: 17269, bulletins: 36183, grandesAffiches: 24, petitesAffiches: 24 },
+      "Préfailles": { electeurs: 1690, conseillers: 15, ccCandidats: 2, circulaires: 1775, bulletins: 3718, grandesAffiches: 2, petitesAffiches: 2 },
+      "Rouans": { electeurs: 2509, conseillers: 23, ccCandidats: 3, circulaires: 2634, bulletins: 5520, grandesAffiches: 2, petitesAffiches: 2 },
+      "Saint-Hilaire-de-Chaléons": { electeurs: 1831, conseillers: 19, ccCandidats: 3, circulaires: 1923, bulletins: 4028, grandesAffiches: 4, petitesAffiches: 4 },
+      "Saint-Michel-Chef-Chef": { electeurs: 2772, conseillers: 29, ccCandidats: 4, circulaires: 2911, bulletins: 6098, grandesAffiches: 4, petitesAffiches: 4 },
+      "Sainte-Pazanne": { electeurs: 5573, conseillers: 29, ccCandidats: 7, circulaires: 5852, bulletins: 12261, grandesAffiches: 4, petitesAffiches: 4 },
+      "Villeneuve-en-Retz": { electeurs: 4111, conseillers: 29, ccCandidats: 4, circulaires: 4317, bulletins: 9044, grandesAffiches: 6, petitesAffiches: 6 },
+      "Vue": { electeurs: 1299, conseillers: 19, ccCandidats: 2, circulaires: 1364, bulletins: 2858, grandesAffiches: 2, petitesAffiches: 2 }
     };
 
     const TARIFS = {
       circulaires: [{ max: 1000, base: 253.77 }, { max: 10000, base: 253.77, parMille: 24.88 }, { max: Infinity, base: 477.69, parMille: 24.88 }],
-      bulletins: [{ max: 1000, base: 119.40 }, { max: 10000, base: 119.40, parMille: 14.93 }, { max: Infinity, base: 253.77, parMille: 12.94 }],
+      bulletinsA5: [{ max: 1000, base: 119.40 }, { max: 10000, base: 119.40, parMille: 14.93 }, { max: Infinity, base: 253.77, parMille: 12.94 }],
+      bulletinsA4: [{ max: 1000, base: 175.12 }, { max: 10000, base: 175.12, parMille: 18.91 }, { max: 30000, base: 345.31, parMille: 17.91 }, { max: Infinity, base: 703.51, parMille: 14.93 }],
       affichesA1: { base10: 297, uniteSup: 0.29 },
       affichesA3: { base10: 90, uniteSup: 0.12 },
       supplementCouleur: 10
@@ -51,11 +52,13 @@ iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAIAAAABc2X6AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
 
     function calculerRemboursement(quantite, tranches) {
       if (quantite <= 0) return 0;
-      const milliers = Math.floor(quantite / 1000) * 1000;
-      for (let t of tranches) {
+      const milliers = Math.ceil(quantite / 1000) * 1000;
+      for (let i = 0; i < tranches.length; i++) {
+        const t = tranches[i];
         if (milliers <= t.max) {
-          if (milliers <= 1000) return t.base;
-          return t.base + Math.floor((milliers - 1000) / 1000) * (t.parMille || 0);
+          if (i === 0) return t.base;
+          const prevMax = tranches[i-1].max;
+          return t.base + Math.floor((milliers - prevMax) / 1000) * (t.parMille || 0);
         }
       }
       return 0;
@@ -79,14 +82,17 @@ iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAIAAAABc2X6AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
 
       const remb = useMemo(() => {
         if (!data) return null;
+        const totalNoms = data.conseillers + (data.ccCandidats || 0);
+        const formatBulletin = totalNoms > 31 ? 'A4' : 'A5';
+        const tarifBulletin = formatBulletin === 'A4' ? TARIFS.bulletinsA4 : TARIFS.bulletinsA5;
         const circ = calculerRemboursement(data.circulaires, TARIFS.circulaires);
-        const bull = calculerRemboursement(data.bulletins, TARIFS.bulletins);
+        const bull = calculerRemboursement(data.bulletins, tarifBulletin);
         const affA1 = calculerAffiche(data.grandesAffiches, TARIFS.affichesA1);
         const affA3 = calculerAffiche(data.petitesAffiches, TARIFS.affichesA3);
         const supp = bulletinCouleur ? Math.floor(data.bulletins / 1000) * TARIFS.supplementCouleur : 0;
         const totalHT = circ + bull + affA1 + affA3;
         const totalTTC = circ * 1.055 + bull * 1.055 + affA1 * 1.20 + affA3 * 1.20;
-        return { circ, bull, affA1, affA3, supp, totalHT, totalTTC };
+        return { circ, bull, affA1, affA3, supp, totalHT, totalTTC, formatBulletin, totalNoms };
       }, [data, bulletinCouleur]);
 
       const tabStyle = (active) => ({
@@ -211,7 +217,7 @@ iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAIAAAABc2X6AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
                       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
                         {[
                           { v: formatNumber(data.electeurs), l: 'Électeurs', c: '#3b82f6', bg: '#eff6ff' },
-                          { v: data.conseillers, l: 'Conseillers', c: '#8b5cf6', bg: '#f5f3ff' },
+                          { v: remb.formatBulletin, l: remb.totalNoms + ' noms sur bulletin', c: remb.formatBulletin === 'A4' ? '#ef4444' : '#8b5cf6', bg: remb.formatBulletin === 'A4' ? '#fef2f2' : '#f5f3ff' },
                           { v: formatNumber(data.circulaires), l: 'Circulaires max', c: '#10b981', bg: '#ecfdf5' },
                           { v: formatNumber(data.bulletins), l: 'Bulletins max', c: '#f59e0b', bg: '#fffbeb' }
                         ].map((x, i) => (
@@ -220,6 +226,13 @@ iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAIAAAABc2X6AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
                             <div style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '0.25rem' }}>{x.l}</div>
                           </div>
                         ))}
+                      </div>
+
+                      {/* Info format bulletin */}
+                      <div style={{ background: '#f0f9ff', borderRadius: '12px', padding: '1rem', marginBottom: '1.5rem', border: '1px solid #bae6fd' }}>
+                        <p style={{ margin: 0, color: '#0c4a6e', fontSize: '0.85rem', lineHeight: '1.6' }}>
+                          {'\u{1F4CB}'} <strong>Format du bulletin de vote :</strong> {data.conseillers} <strong>CM</strong> (Conseillers Municipaux) + {data.ccCandidats || 0} <strong>CC</strong> (Candidats Conseillers Communautaires) = <strong>{remb.totalNoms} noms</strong> sur le bulletin {'\u2192'} format <strong>{remb.formatBulletin === 'A4' ? 'A4 (210\u00d7297mm)' : 'A5 (148\u00d7210mm)'}</strong>
+                        </p>
                       </div>
 
                       {/* Option couleur */}
@@ -255,7 +268,7 @@ iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAIAAAABc2X6AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
                           <tbody>
                             {[
                               { doc: 'Circulaires A4 R/V', papier: '70g offset PEFC', qty: data.circulaires, tva: '5,5%', ht: remb.circ, ttc: remb.circ * 1.055 },
-                              { doc: `Bulletins A5 ${bulletinCouleur ? '(couleur)' : '(noir)'}`, papier: '70g offset PEFC', qty: data.bulletins, tva: '5,5%', ht: remb.bull, ttc: remb.bull * 1.055 },
+                              { doc: `Bulletins ${remb.formatBulletin} ${bulletinCouleur ? '(couleur)' : '(noir)'}`, papier: '70g offset PEFC', qty: data.bulletins, tva: '5,5%', ht: remb.bull, ttc: remb.bull * 1.055 },
                               { doc: 'Affiches A1', papier: '135g dos bleu PEFC', qty: data.grandesAffiches, tva: '20%', ht: remb.affA1, ttc: remb.affA1 * 1.20 },
                               { doc: 'Affiches A3', papier: '130g CB PEFC', qty: data.petitesAffiches, tva: '20%', ht: remb.affA3, ttc: remb.affA3 * 1.20 }
                             ].map((row, i) => (
