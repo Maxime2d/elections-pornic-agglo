@@ -89,7 +89,8 @@ iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAIAAAABc2X6AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
         const bull = calculerRemboursement(data.bulletins, tarifBulletin);
         const affA1 = calculerAffiche(data.grandesAffiches, TARIFS.affichesA1);
         const affA3 = calculerAffiche(data.petitesAffiches, TARIFS.affichesA3);
-        const supp = bulletinCouleur ? Math.floor(data.bulletins / 1000) * TARIFS.supplementCouleur : 0;
+        const suppPrix = formatBulletin === 'A4' ? TARIFS.supplementCouleur * 1.8 : TARIFS.supplementCouleur;
+        const supp = bulletinCouleur ? Math.ceil(data.bulletins / 1000) * suppPrix : 0;
         const totalHT = circ + bull + affA1 + affA3;
         const totalTTC = circ * 1.055 + bull * 1.055 + affA1 * 1.20 + affA3 * 1.20;
         return { circ, bull, affA1, affA3, supp, totalHT, totalTTC, formatBulletin, totalNoms };
@@ -281,22 +282,22 @@ iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAIAAAABc2X6AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
                                 <td style={{ padding: '14px 16px', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontWeight: '600' }}>{formatCurrency(row.ttc)}</td>
                               </tr>
                             ))}
-                            {bulletinCouleur && (
-                              <tr style={{ background: '#fef2f2' }}>
-                                <td colSpan="2" style={{ padding: '14px 16px', borderBottom: '1px solid #fecaca', color: '#b91c1c' }}>⚠️ Supplément couleur (non pris en charge)</td>
-                                <td style={{ padding: '14px 16px', borderBottom: '1px solid #fecaca', textAlign: 'right', color: '#b91c1c' }}>{Math.floor(data.bulletins / 1000)}×10€</td>
-                                <td style={{ padding: '14px 16px', borderBottom: '1px solid #fecaca', textAlign: 'center', color: '#b91c1c' }}>20%</td>
-                                <td style={{ padding: '14px 16px', borderBottom: '1px solid #fecaca', textAlign: 'right', fontWeight: '600', color: '#b91c1c' }}>{formatCurrency(remb.supp)}</td>
-                                <td style={{ padding: '14px 16px', borderBottom: '1px solid #fecaca', textAlign: 'right', fontWeight: '600', color: '#b91c1c' }}>{formatCurrency(remb.supp * 1.20)}</td>
-                              </tr>
-                            )}
                           </tbody>
                           <tfoot>
                             <tr>
-                              <td colSpan="4" style={{ padding: '18px 16px', background: '#0891b2', color: '#fff', fontWeight: '700', borderRadius: '0 0 0 12px' }}>TOTAL REMBOURSEMENT (1 tour)</td>
+                              <td colSpan="4" style={{ padding: '18px 16px', background: '#0891b2', color: '#fff', fontWeight: '700', borderRadius: bulletinCouleur ? '0' : '0 0 0 12px' }}>TOTAL REMBOURSEMENT pris en charge par l'État (1 tour) — sous réserve d'obtenir 5% des suffrages</td>
                               <td style={{ padding: '18px 16px', background: '#0891b2', color: '#fff', textAlign: 'right', fontWeight: '700', fontSize: '1.1rem' }}>{formatCurrency(remb.totalHT)}</td>
-                              <td style={{ padding: '18px 16px', background: '#0891b2', color: '#fff', textAlign: 'right', fontWeight: '700', fontSize: '1.1rem', borderRadius: '0 0 12px 0' }}>{formatCurrency(remb.totalTTC)}</td>
+                              <td style={{ padding: '18px 16px', background: '#0891b2', color: '#fff', textAlign: 'right', fontWeight: '700', fontSize: '1.1rem', borderRadius: bulletinCouleur ? '0' : '0 0 12px 0' }}>{formatCurrency(remb.totalTTC)}</td>
                             </tr>
+                            {bulletinCouleur && (
+                              <tr style={{ background: '#fef2f2' }}>
+                                <td colSpan="2" style={{ padding: '14px 16px', borderTop: '2px solid #fecaca', color: '#b91c1c', borderRadius: '0 0 0 12px' }}>⚠️ Supplément couleur (non pris en charge par l'État)</td>
+                                <td style={{ padding: '14px 16px', borderTop: '2px solid #fecaca', textAlign: 'right', color: '#b91c1c' }}>{Math.ceil(data.bulletins / 1000)}×{formatCurrency(remb.formatBulletin === 'A4' ? TARIFS.supplementCouleur * 1.8 : TARIFS.supplementCouleur)}</td>
+                                <td style={{ padding: '14px 16px', borderTop: '2px solid #fecaca', textAlign: 'center', color: '#b91c1c' }}>20%</td>
+                                <td style={{ padding: '14px 16px', borderTop: '2px solid #fecaca', textAlign: 'right', fontWeight: '600', color: '#b91c1c' }}>{formatCurrency(remb.supp)}</td>
+                                <td style={{ padding: '14px 16px', borderTop: '2px solid #fecaca', textAlign: 'right', fontWeight: '600', color: '#b91c1c', borderRadius: '0 0 12px 0' }}>{formatCurrency(remb.supp * 1.20)}</td>
+                              </tr>
+                            )}
                           </tfoot>
                         </table>
                       </div>
