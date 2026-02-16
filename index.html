@@ -188,12 +188,59 @@ iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAIAAAABc2X6AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
                     </div>
                   </div>
 
-                  {/* Info enveloppes */}
+                  {/* Info enveloppes de scrutin */}
                   <div style={{ background: '#f0fdfa', borderRadius: '12px', padding: '1rem', marginBottom: '1.5rem', border: '1px solid #99f6e4' }}>
                     <p style={{ margin: 0, color: '#0f766e', fontSize: '0.9rem' }}>
-                      ℹ️ Les <strong>enveloppes de vote</strong> sont fournies par l'État. Vous n'avez rien à prévoir.
+                      \u2709\uFE0F Les <strong>enveloppes de scrutin</strong> (enveloppes dans lesquelles l'électeur glisse son bulletin) sont <strong>fournies par la mairie</strong>. Les listes n'ont rien à prévoir.
                     </p>
                   </div>
+
+                  {/* Info distribution — communes < 2500 hab */}
+                  {data && data.conseillers <= 19 && (
+                    <div style={{ background: '#fff7ed', borderRadius: '16px', padding: '1.25rem', marginBottom: '1.5rem', border: '2px solid #fed7aa' }}>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+                        <span style={{ fontSize: '1.5rem' }}>\u{1F4EC}</span>
+                        <div>
+                          <h4 style={{ margin: '0 0 0.5rem 0', color: '#c2410c', fontSize: '1rem' }}>Commune de moins de 2 500 habitants — Distribution à votre charge</h4>
+                          <p style={{ margin: '0 0 0.75rem 0', color: '#9a3412', fontSize: '0.9rem', lineHeight: '1.6' }}>
+                            Dans les communes de moins de 2 500 habitants, la <strong>commission de propagande</strong> existe et contrôle vos documents, mais <strong>elle ne gère pas l'envoi postal aux électeurs</strong> et ne fait pas la mise sous pli.<br/><br/>
+                            <strong>L'envoi de la propagande est à l'initiative et à la charge de chaque liste.</strong> Vous devez prévoir : enveloppes, mise sous pli et affranchissement.
+                          </p>
+
+                          <div style={{ background: '#fff', borderRadius: '12px', padding: '1rem', border: '1px solid #fed7aa', marginBottom: '0.75rem' }}>
+                            <h5 style={{ margin: '0 0 0.5rem 0', color: '#1e293b', fontSize: '0.95rem' }}>\u2709\uFE0F Solution enveloppes proposée par 2D Publicité</h5>
+                            <p style={{ margin: '0 0 0.5rem 0', color: '#475569', fontSize: '0.9rem', lineHeight: '1.6' }}>
+                              <strong>Enveloppes C5 (162 \u00d7 229 mm)</strong> — blanches, 80 g/m\u00B2, certifiées PEFC<br/>
+                              Permet d'insérer : 1 circulaire A4 pliée en 2 + 1 bulletin de vote
+                            </p>
+                            <div style={{ display: 'inline-block', background: '#f0fdfa', padding: '8px 16px', borderRadius: '8px', border: '1px solid #99f6e4' }}>
+                              <strong style={{ color: '#0f766e', fontSize: '1rem' }}>20,00 \u20AC HT la boîte de 500</strong>
+                            </div>
+                            <p style={{ margin: '0.5rem 0 0 0', color: '#b91c1c', fontSize: '0.8rem', fontStyle: 'italic' }}>
+                              Facturation distincte — non soumise au remboursement de l'État
+                            </p>
+                          </div>
+
+                          <div style={{ background: '#f0f9ff', borderRadius: '10px', padding: '0.75rem 1rem', border: '1px solid #bae6fd' }}>
+                            <p style={{ margin: 0, color: '#0c4a6e', fontSize: '0.85rem', lineHeight: '1.5' }}>
+                              \u{1F4CA} <strong>Organisation recommandée du tirage :</strong><br/>
+                              \u2022 <strong>50 %</strong> des bulletins \u2192 pour les bureaux de vote<br/>
+                              \u2022 <strong>50 %</strong> des bulletins \u2192 pour la distribution aux électeurs avec la circulaire
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Info distribution — communes >= 2500 hab */}
+                  {data && data.conseillers > 19 && (
+                    <div style={{ background: '#f0fdf4', borderRadius: '12px', padding: '1rem', marginBottom: '1.5rem', border: '1px solid #bbf7d0' }}>
+                      <p style={{ margin: 0, color: '#166534', fontSize: '0.9rem', lineHeight: '1.6' }}>
+                        \u2705 Commune de 2 500 habitants ou plus : la <strong>commission de propagande</strong> prend en charge l'envoi postal de vos circulaires et bulletins aux électeurs. Vous n'avez qu'à lui remettre vos documents imprimés.
+                      </p>
+                    </div>
+                  )}
                   
                   <div style={{ marginBottom: '2rem' }}>
                     <label style={{ display: 'block', fontWeight: '600', marginBottom: '0.5rem', color: '#1e293b', fontSize: '0.95rem' }}>Sélectionnez votre commune</label>
